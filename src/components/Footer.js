@@ -4,10 +4,10 @@ import { Menu } from 'semantic-ui-react'
 export default class Footer extends Component {
   render() {
     return (
-      <footer className="footer">
-        <Menu inverted fluid widths={1}>
+      <footer className="footer bg-primary">
+        <Menu className="bg-primary text-white" inverted fluid widths={1}>
           <Menu.Item>
-            Camunda - React Redux Example Tasklist 2018
+            Truviq - React Redux Example Tasklist 2018
           </Menu.Item>
         </Menu>
       </footer>

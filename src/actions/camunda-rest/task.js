@@ -31,7 +31,7 @@ export const postCompleTask = (taskId, values) => ({
       }
     }
   }
-})
+}) 
 
 export const fetchTaskVariables = (taskId, variableNames) => {
   const variableName = Object.keys(variableNames).join(',')
@@ -43,3 +43,4 @@ export const fetchTaskVariables = (taskId, variableNames) => {
     }
   }
 }
+ 

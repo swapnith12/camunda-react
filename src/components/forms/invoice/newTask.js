@@ -39,7 +39,7 @@ const SimpleForm = props => {
         </div>
       </div>
       <div>
-        <label>Sex</label>
+        <label>Gender</label>
         <div>
           <label>
             <Field
@@ -62,13 +62,13 @@ const SimpleForm = props => {
         </div>
       </div>
       <div>
-        <label>Favorite Color</label>
+        <label>Income</label>
         <div>
           <Field name="favoriteColor" component="select">
             <option />
-            <option value="ff0000">Red</option>
-            <option value="00ff00">Green</option>
-            <option value="0000ff">Blue</option>
+            <option value="ff0000">below 5-lakhs</option>
+            <option value="00ff00">between 5-7 lakhs </option>
+            <option value="0000ff">above 7-lakhs</option>
           </Field>
         </div>
       </div>
