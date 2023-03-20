@@ -15,8 +15,8 @@ const SimpleForm = props => {
           switch(formType) {
             case "FirmDetails":
               return(
-                <form onSubmit={handleSubmit}>
-                      <div>
+                <form onSubmit={handleSubmit} className=" container bg-light">
+                      <div className='mb-2'>
                         <label>Firm Name</label>
                         <div>
                           <Field
@@ -24,10 +24,11 @@ const SimpleForm = props => {
                             component="input"
                             type="text"
                             placeholder="Firm Name"
+                            required
                           />
                         </div>
                       </div>
-                      <div>
+                      <div className='mb-2'>
                         <label>Contact</label>
                         <div>
                           <Field
@@ -35,23 +36,22 @@ const SimpleForm = props => {
                             component="input"
                             type="text"
                             placeholder="Contact Name"
+                            required
                           />
                         </div>
                       </div>
-                      <div>
-                        <button type="submit" disabled={pristine || submitting}>
+                      <div className='mb-2'>
+                      <p className='text-warning fsc-3'>Please Fill all the forms displayed in options above!</p>
+                        <button className='btn btn-primary mb-2'  type="submit" disabled={pristine || submitting}>
                           Submit
-                        </button>
-                        <button type="button" disabled={pristine || submitting} onClick={reset}>
-                          Clear Values
                         </button>
                       </div>
                     </form>
               )
             case "PromoterDetails":
               return(
-                   <form onSubmit={handleSubmit}>
-                      <div>
+                   <form onSubmit={handleSubmit} className=" container bg-light">
+                      <div className='mb-2'>
                         <label>Name of Promoter</label>
                         <div>
                           <Field
@@ -59,10 +59,11 @@ const SimpleForm = props => {
                             component="input"
                             type="text"
                             placeholder="Name of Promoter"
+                            required
                           />
                         </div>
                       </div>
-                      <div>
+                      <div className='mb-2'>
                         <label>Optional Promoter 1</label>
                         <div>
                           <Field
@@ -73,7 +74,7 @@ const SimpleForm = props => {
                           />
                         </div>
                       </div>
-                      <div>
+                      <div className='mb-2'>
                         <label>Optional Promoter 2</label>
                         <div>
                           <Field
@@ -84,18 +85,19 @@ const SimpleForm = props => {
                           />
                         </div>
                       </div>
-                      <div>
+                      <div className='mb-2'>
                         <label>Mobile Number</label>
                         <div>
                           <Field
                             name="mobilenumber"
                             component="input"
-                            type="number"
+                            type="digit"
                             placeholder="Mobile Number"
+                            required
                           />
                         </div>
                       </div>
-                      <div>
+                      <div className='mb-2'>
                         <label>Email Id</label>
                         <div>
                           <Field
@@ -103,30 +105,30 @@ const SimpleForm = props => {
                             component="input"
                             type="email"
                             placeholder="Email"
+                            required
                           />
                         </div>
                       </div>
                       <div>
-                        <button type="submit" disabled={pristine || submitting}>
+                      <p className='text-warning fsc-3'>Please Fill all the forms displayed in options above!</p>
+                        <button className='btn btn-primary mb-2'  type="submit" disabled={pristine || submitting}>
                           Submit
-                        </button>
-                        <button type="button" disabled={pristine || submitting} onClick={reset}>
-                          Clear Values
                         </button>
                       </div>
                     </form>
                   )
                   case "Project Details":
                     return(
-                      <form onSubmit={handleSubmit}>
-                    <div>
+                      <form onSubmit={handleSubmit} className=" container bg-light">
+                    <div className='mb-2'>
                       <label>Project Status</label>
                         <div>
                           <label><Field 
                                   name="projectStatus" 
                                   component="input" 
                                   type="radio" 
-                                  value="New"/>
+                                  value="New"
+                                  />
                                   {' '}
                                   New
                           </label>
@@ -135,24 +137,26 @@ const SimpleForm = props => {
                                 name="projectStatus" 
                                 component="input"
                                 type="radio"
-                                value="Existing"/>
+                                value="Existing"
+                                />
                                 {' '}
                                 Existing
                                 </label>
                         </div>
                       </div>
-                    <div>
+                    <div className='mb-2'>
                       <label>Project Category</label>
                       <div>
                       <Field name="ProjetCategory" 
-                      component="select">
+                      component="select"
+                      required>
                       <option value="Chemical Industry">Chemical Industry</option>
                       <option value="Agricultural Project">Agricultural Project</option>
                       <option value="Informational Technology">Informational Technology</option>
                       </Field>
                       </div>
                     </div>
-                    <div>
+                    <div className='mb-2'>
                         <label>Land in yards</label>
                         <div>
                           <Field
@@ -160,10 +164,11 @@ const SimpleForm = props => {
                             component="input"
                             type="number"
                             placeholder="Land in yards"
+                            required
                           />
                         </div>
                     </div>
-                    <div>
+                    <div className='mb-2'>
                         <label>Land Location</label>
                         <div>
                           <Field
@@ -171,30 +176,30 @@ const SimpleForm = props => {
                             component="input"
                             type="text"
                             placeholder="Land Location"
+                            required
                           />
                         </div>
                     </div>
                     <div>
-                      <button type="submit" disabled={pristine || submitting}>
+                    <p className='text-warning fsc-3'>Please Fill all the forms displayed in options above!</p>
+                      <button className='btn btn-primary mb-2'  type="submit" disabled={pristine || submitting}>
                         Submit
-                      </button>
-                      <button type="button" disabled={pristine || submitting} onClick={reset}>
-                        Clear Values
                       </button>
                     </div>
                   </form>
                     )
             default :
             return(
-              <form onSubmit={handleSubmit}>
-              <div>
+              <form onSubmit={handleSubmit} className=" container bg-light">
+              <div className='mb-2'>
                 <label>Project Status</label>
                   <div>
                     <label><Field 
                             name="New" 
                             component="input" 
                             type="radio" 
-                            value="New"/>
+                            value="New"
+                            />
                             {' '}
                             New
                     </label>
@@ -203,24 +208,26 @@ const SimpleForm = props => {
                           name="Existing" 
                           component="input"
                           type="radio"
-                          value="Existing"/>
+                          value="Existing"
+                          />
                           {' '}
                           Existing
                           </label>
                   </div>
                 </div>
-              <div>
+              <div className='mb-2'>
                 <label>Project Category</label>
                 <div>
                 <Field name="ProjetCategory" 
-                component="select">
+                component="select"
+                required>
                 <option value="Chemical Industry">Chemical Industry</option>
                 <option value="Agricultural Project">Agricultural Project</option>
                 <option value="Informational Technology">Informational Technology</option>
                 </Field>
                 </div>
               </div>
-              <div>
+              <div className='mb-2'>
               <label>Land in yards</label>
                         <div>
                           <Field
@@ -228,10 +235,11 @@ const SimpleForm = props => {
                             component="input"
                             type="number"
                             placeholder="Land in yards"
+                            required
                           />
                         </div>
                     </div>
-                    <div>
+                    <div className='mb-2'>
                         <label>Land Location</label>
                         <div>
                           <Field
@@ -239,15 +247,14 @@ const SimpleForm = props => {
                             component="input"
                             type="text"
                             placeholder="Land Location"
+                            required
                           />
                         </div>
                     </div>
               <div>
-                <button type="submit" disabled={pristine || submitting}>
+                <p className='text-warning fsc-3'>Please Fill all the forms displayed in options above!</p>
+                <button className='btn btn-primary mb-2' type="submit" disabled={pristine || submitting}>
                   Submit
-                </button>
-                <button type="button" disabled={pristine || submitting} onClick={reset}>
-                  Clear Values
                 </button>
               </div>
             </form>
@@ -256,13 +263,13 @@ const SimpleForm = props => {
         }
     }
   return (
-   <div>
-    <select value={formType} onChange={handleFormTypeChange}>
+   <div className='container-fluid d-flex flex-column justify-content-center align-items-center'>
+    <select value={formType} onChange={handleFormTypeChange} className="mb-2" width="500px">
         <option value="FirmDetails">Firm Details</option>
         <option value="PromoterDetails">Promoter Details</option>
         <option value="Project Details">Project Details</option>
       </select>
-    <div className='container-fluid'>
+    <div className='text-dark' >
     {renderForm()}
     </div>
    </div>

@@ -8,7 +8,7 @@ export default class Header extends Component {
       <header className="header">
           <nav class="navbar navbar-expand-lg bg-body-primary bg-primary">
             <div class="container-fluid">
-              <Link class="navbar-brand text-white" to="/" >Truviq-BPMN</Link>
+              <Link class="navbar-brand text-white" to="/" >LandAllotment</Link>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -16,12 +16,6 @@ export default class Header extends Component {
                 <ul class="navbar-nav">
                   <li class="nav-item">
                     <Link class="nav-link active  text-white" aria-current="page" to="/">Home</Link>
-                  </li>
-                  <li class="nav-item">
-                    <Link class="nav-link text-white" to="/startProcess/list">Start Process</Link>
-                  </li>
-                  <li class="nav-item">
-                    <Link class="nav-link text-white" to="/tasklist">Tasklist</Link>
                   </li>
                 </ul>
               </div>
