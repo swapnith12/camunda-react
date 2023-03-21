@@ -9,8 +9,18 @@ const App = ({actions, children}) => (
   <div>
     <Container text>
       <Header as='h2' className='text-primary'>LandAllotment Process</Header>
-      <p>This project shows how one can use React Redux with the standard Camunda REST API. It is an example implementation of how one could build a Tasklist for Camunda using Front End technology only.The Task Forms are defined within this application and not on the Server-Side to make it very easy to use.This project was bootstrapped with Create React App. Please see the React Scripts Guide to see what you can do with this project from the React perspective.</p>
-      <Link to="/startProcess/key/LandAllotment_camunda"><button className='btn btn-primary'>Start Process</button></Link>
+      <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  required/>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password"  class="form-control" required id="exampleInputPassword1" />
+          </div>
+          <Link to="/startProcess/key/LandAllotment_camunda"><button type="submit" className='btn btn-primary'>Sign In</button></Link>
+      </form>
     </Container>
   </div>
 )

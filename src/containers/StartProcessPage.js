@@ -4,9 +4,17 @@ import { withRouter } from 'react-router-dom'
 import GenericForm from '../components/GenericForm'
 import { loadProcessDefinitions, loadFormKey } from '../actions'
 
+let AppRef="A"
+
+const num=()=>{  
+  const randomnum=Math.floor(Math.random() * 1000000) + 1;
+  return randomnum
+}
+
 class StartProcessPage extends Component {
   componentWillMount() {
     this.props.loadFormKey(this.props.process);
+    AppRef=AppRef+num()
   }
 
   render() {
@@ -18,7 +26,7 @@ class StartProcessPage extends Component {
       )
     } else if (processInstanceStarted) {
       return (
-        <div>Process instance has been started.</div>
+        <div>Your Application Submitted.<br/>Application Id:{AppRef}</div>
       )
     } else {
       const key = formKey['undefined'].key
