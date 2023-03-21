@@ -34,7 +34,6 @@ class GenericForm extends Component {
       this.setState({ loading: true });
       dispatch(loadTaskVariables(taskId, form.registeredFields))
     }
-
   }
 
   handleComplete(values, dispatch) {
@@ -44,7 +43,7 @@ class GenericForm extends Component {
 
   handleStartInstance(values, dispatch) {
     values = this.getBody(values)
-    return dispatch(startProcessInstance(this.props.processDefinitionKey, values))
+    return dispatch(startProcessInstance(this.props.processDefinitionKey,values))
   }
 
   getBody(values) {
@@ -53,7 +52,8 @@ class GenericForm extends Component {
       variables[item] = {'value': values[item]}
     });
     return {
-      'variables': variables
+      'variables': variables,
+      "businessKey": "Doom1"
     }
   }
 }

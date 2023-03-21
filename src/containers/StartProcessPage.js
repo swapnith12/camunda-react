@@ -4,21 +4,15 @@ import { withRouter } from 'react-router-dom'
 import GenericForm from '../components/GenericForm'
 import { loadProcessDefinitions, loadFormKey } from '../actions'
 
-let AppRef="A"
-
-const num=()=>{  
-  const randomnum=Math.floor(Math.random() * 1000000) + 1;
-  return randomnum
-}
 
 class StartProcessPage extends Component {
   componentWillMount() {
     this.props.loadFormKey(this.props.process);
-    AppRef=AppRef+num()
   }
 
   render() {
-    const { process, formKey, processInstanceStarted } = this.props
+    const { process, formKey, processInstanceStarted} = this.props
+
 
     if (!formKey && !processInstanceStarted) {
       return (
@@ -26,13 +20,13 @@ class StartProcessPage extends Component {
       )
     } else if (processInstanceStarted) {
       return (
-        <div>Your Application Submitted.<br/>Application Id:{AppRef}</div>
+        <div>Your Application Submitted.<br/>Application Id:</div>
       )
     } else {
       const key = formKey['undefined'].key
       return (
         <div>
-          <GenericForm formKey={key} processDefinitionKey={process} />
+          <GenericForm formKey={key} processDefinitionKey={process} values/>
         </div>
       )
     }

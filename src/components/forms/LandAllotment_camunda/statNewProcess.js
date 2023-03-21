@@ -15,12 +15,13 @@ const SimpleForm = props => {
       setFormType(formType+1)
   }
 
-    const { handleSubmit, pristine, reset, submitting } = props 
+  const { handleSubmit, pristine, reset, submitting } = props 
   const renderForm=()=>{
           switch(formtodisplay[formType]) {
             case "FirmDetails":
               return(
                 <form onSubmit={handleSubmit} className=" container">
+                      <h1 className='fsc-5 mb-4'>Firm Details</h1>
                       <div className='mb-2'>
                         <label><h4>Firm Name</h4></label>
                         <div>
@@ -56,7 +57,8 @@ const SimpleForm = props => {
               )
             case "PromoterDetails":
               return(
-                   <form onSubmit={handleSubmit} className=" container">
+                   <form onSubmit={handleSubmit} className=" container ">
+                      <h1 className='fsc-5 mb-4'>Promoter Details</h1>
                       <div className='mb-2'>
                         <label><h4>Name of Promoter</h4></label>
                         <div>
@@ -125,7 +127,7 @@ const SimpleForm = props => {
                       <span><button className='btn btn-primary mb-2'  type="button" onClick={PrevStep} disabled={pristine || submitting}>
                           Back 
                         </button>
-                        &nbsp;
+                        &nbsp;&nbsp;
                         <button className='btn btn-primary mb-2'  type="button" onClick={NextStep} disabled={pristine || submitting}>
                           Next 
                         </button></span>
@@ -136,6 +138,7 @@ const SimpleForm = props => {
                   case "ProjectDetails":
                     return(
                       <form onSubmit={handleSubmit} className=" container">
+                        <h1 className='fsc-5 mb-4'>Project Details</h1>
                     <div className='mb-2'>
                       <label><h4>Project Status</h4></label>
                         <div>
@@ -146,8 +149,8 @@ const SimpleForm = props => {
                                   value="New"
                                   />
                                   {' '}
-                                  New
-                          </label>
+                                  New  
+                          </label>&nbsp;&nbsp;&nbsp;
                           <label>
                                 <Field
                                 name="projectStatus" 
@@ -200,19 +203,21 @@ const SimpleForm = props => {
                         </div>
                     </div>
                     <div>
-                    <button className='btn btn-primary mb-2'  type="button" onClick={PrevStep} disabled={pristine || submitting}>
+                    <span><button className='btn btn-primary mb-2'  type="button" onClick={PrevStep} disabled={pristine || submitting}>
                           Back
                     </button>
-                    <br/>
+                    &nbsp;&nbsp;
                       <button className='btn btn-primary mb-2'  type="submit" disabled={pristine || submitting}>
                         Submit
                       </button>
+                      </span>
                     </div>
                   </form>
                     )
             default :
             return(
               <form onSubmit={handleSubmit} className=" container">
+                     <h1 className='fsc-5 mb-4'>Firm Details</h1>
                       <div className='mb-2'>
                         <label><h4>Firm Name</h4></label>
                         <div>
@@ -251,7 +256,7 @@ const SimpleForm = props => {
     }
   return (
    <div className='container d-flex flex-column justify-content-center align-items-center'>
-    <div className='container-fluid bg-light border rounded p-5' >
+    <div className='container-fluid bg-light border rounded p-3' >
     {renderForm()}
     </div>
    </div>

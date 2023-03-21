@@ -7,7 +7,7 @@ export const fetchProcessDefinitions = (processDefinitionId) => {
       [CALL_API]: {
         types: [ AT.PROCESS_DEFINITION_REQUEST, AT.PROCESS_DEFINITION_SUCCESS, AT.PROCESS_DEFINITION_FAILURE ],
         endpoint: `process-definition?processDefinitionId=${processDefinitionId}`,
-        schema: Schemas.PROCESS_DEFINITION_ARRAY
+        schema: Schemas.PROCESS_DEFINITION_ARRAY,
       }
     }
   } else {
@@ -21,11 +21,19 @@ export const fetchProcessDefinitions = (processDefinitionId) => {
   }
 }
 
-export const fetchFormKey = (processDefinitionKey) => ({
+export const fetchFormKey = (processDefinitionKey,values) => ({
   [CALL_API]: {
     types: [ AT.FORM_KEY_REQUEST, AT.FORM_KEY_SUCCESS, AT.FORM_KEY_FAILURE ],
     endpoint: `process-definition/key/${processDefinitionKey}/startForm`,
-    schema: Schemas.FORM_KEY
+    schema: Schemas.FORM_KEY,
+    settings: {
+      method: 'get',
+      body: JSON.stringify(values),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }
   }
 })
 
@@ -33,7 +41,7 @@ export const fetchProcessDefinitionXML = (processDefinitionId) => ({
   [CALL_API]: {
     types: [ AT.PROCESS_DEFINITION_XML_REQUEST, AT.PROCESS_DEFINITION_XML_SUCCESS, AT.PROCESS_DEFINITION_XML_FAILURE ],
     endpoint: `/process-definition/${processDefinitionId}/xml`,
-    schema: Schemas.PROCESS_DEFINITION_XML
+    schema: Schemas.PROCESS_DEFINITION_XML,
   }
 })
 
